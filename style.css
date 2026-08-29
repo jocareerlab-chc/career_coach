@@ -1,0 +1,250 @@
+:root {
+  --深藍: #12233f;
+  --藍: #3758d7;
+  --亮藍: #6c8cff;
+  --橘: #ff8b56;
+  --米白: #f7f6f1;
+  --淡藍: #eef2ff;
+  --文字: #26334a;
+  --次要字: #69758a;
+  --白: #ffffff;
+  --線: #dfe4ee;
+  --陰影: 0 24px 60px rgba(31, 49, 92, .12);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; color: var(--文字); background: var(--白); font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif; line-height: 1.7; }
+a { color: inherit; text-decoration: none; }
+button, input { font: inherit; }
+button { cursor: pointer; }
+
+.導覽列 { height: 78px; display: flex; align-items: center; justify-content: space-between; padding: 0 max(5vw, 24px); position: sticky; top: 0; z-index: 30; background: rgba(255,255,255,.92); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(223,228,238,.8); }
+.品牌 { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 19px; color: var(--深藍); letter-spacing: .04em; }
+.品牌圖示 { width: 36px; height: 36px; display: grid; place-items: center; color: var(--白); background: var(--深藍); border-radius: 50% 50% 46% 54%; font-size: 16px; position: relative; }
+.品牌圖示::after { content: ""; position: absolute; inset: 5px; border: 1px solid rgba(255,255,255,.55); border-radius: 50%; }
+.桌面選單 { display: flex; gap: 34px; font-size: 14px; font-weight: 600; }
+.桌面選單 a { transition: color .2s; }
+.桌面選單 a:hover { color: var(--藍); }
+.按鈕, .框線按鈕, .白色按鈕 { display: inline-flex; justify-content: center; align-items: center; gap: 22px; min-height: 52px; padding: 0 26px; border: 0; border-radius: 7px; font-weight: 750; transition: transform .2s, box-shadow .2s, background .2s; }
+.按鈕 { color: var(--白); background: var(--藍); box-shadow: 0 12px 24px rgba(55,88,215,.22); }
+.按鈕:hover, .白色按鈕:hover { transform: translateY(-2px); box-shadow: 0 16px 30px rgba(31,49,92,.2); }
+.按鈕小 { min-height: 42px; padding: 0 19px; font-size: 14px; }
+.滿版 { width: 100%; }
+
+.首頁 { min-height: 670px; display: grid; grid-template-columns: 1.05fr .95fr; align-items: center; gap: 4vw; padding: 70px max(7vw, 28px) 80px; overflow: hidden; background: linear-gradient(120deg, #f9f8f3 0%, #f9f8f3 48%, #eef1ff 48%, #e9eeff 100%); }
+.首頁內容 { max-width: 650px; z-index: 2; }
+.眉標 { color: var(--藍); font-size: 13px; letter-spacing: .15em; font-weight: 800; margin: 0 0 18px; }
+.眉標 span { display: inline-block; width: 24px; height: 2px; margin-right: 7px; vertical-align: middle; background: var(--橘); }
+h1 { margin: 0; color: var(--深藍); font-size: clamp(46px, 5.4vw, 78px); line-height: 1.14; letter-spacing: -.055em; }
+h1 span { color: var(--藍); position: relative; }
+h1 span::after { content: ""; position: absolute; left: 4px; right: 0; bottom: -7px; height: 8px; opacity: .45; background: repeating-linear-gradient(-20deg, var(--橘) 0 3px, transparent 3px 8px); }
+.首頁說明 { max-width: 585px; margin: 30px 0; color: var(--次要字); font-size: 17px; }
+.首頁操作 { display: flex; align-items: center; gap: 32px; }
+.文字連結 { font-weight: 700; color: var(--深藍); }
+.播放 { display: inline-grid; place-items: center; width: 38px; height: 38px; margin-right: 8px; padding-left: 2px; color: var(--藍); background: var(--白); border-radius: 50%; box-shadow: 0 8px 24px rgba(31,49,92,.13); font-size: 11px; }
+.信任列 { display: flex; gap: 0; margin-top: 52px; }
+.信任列 div { padding: 0 28px; border-right: 1px solid var(--線); }
+.信任列 div:first-child { padding-left: 0; }
+.信任列 div:last-child { border: 0; }
+.信任列 strong, .信任列 span { display: block; }
+.信任列 strong { color: var(--深藍); font-size: 21px; }
+.信任列 span { color: var(--次要字); font-size: 12px; }
+.首頁視覺 { min-height: 520px; position: relative; display: grid; place-items: center; }
+.光暈 { width: 380px; height: 380px; position: absolute; border-radius: 50%; background: radial-gradient(circle, rgba(108,140,255,.35), transparent 68%); filter: blur(5px); }
+.晶圓 { width: 330px; height: 330px; position: relative; display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; padding: 61px; border-radius: 50%; overflow: hidden; transform: rotate(-8deg); background: linear-gradient(140deg, #7f9aff, #334ebc 55%, #15275f); border: 12px solid rgba(255,255,255,.45); box-shadow: -25px 35px 60px rgba(31,49,92,.25), inset -20px -20px 40px rgba(15,27,80,.3); }
+.晶圓 i { border: 1px solid rgba(255,255,255,.38); background: linear-gradient(135deg, rgba(255,255,255,.3), rgba(127,154,255,.05)); }
+.晶圓中心 { position: absolute; inset: 125px; z-index: 2; display: grid; place-items: center; color: var(--白); background: var(--橘); border-radius: 8px; font-size: 17px; font-weight: 900; box-shadow: 0 0 0 8px rgba(255,255,255,.2); transform: rotate(8deg); }
+.漂浮卡 { position: absolute; z-index: 4; min-width: 184px; padding: 15px 18px; background: rgba(255,255,255,.94); border: 1px solid rgba(255,255,255,.8); border-radius: 9px; box-shadow: var(--陰影); }
+.漂浮卡 span { float: left; width: 30px; height: 30px; margin-right: 10px; display: grid; place-items: center; color: var(--白); background: var(--藍); border-radius: 50%; font-size: 10px; font-weight: 800; }
+.漂浮卡 p, .漂浮卡 strong { margin: 0; display: block; }
+.漂浮卡 p { color: var(--藍); font-size: 11px; font-weight: 800; }
+.漂浮卡 strong { font-size: 13px; color: var(--深藍); }
+.卡一 { top: 55px; left: 1%; animation: 漂浮 4s ease-in-out infinite; }
+.卡二 { right: -2%; top: 210px; animation: 漂浮 4.5s ease-in-out infinite .7s; }
+.卡三 { bottom: 35px; left: 8%; animation: 漂浮 5s ease-in-out infinite 1s; }
+.卡三 span { background: var(--橘); }
+.軌道 { position: absolute; border: 1px dashed rgba(55,88,215,.35); border-radius: 50%; }
+.軌道一 { width: 460px; height: 460px; }
+.軌道二 { width: 525px; height: 390px; transform: rotate(35deg); }
+@keyframes 漂浮 { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+
+.品牌帶 { padding: 24px max(6vw, 24px); display: flex; align-items: center; gap: 55px; background: var(--深藍); color: rgba(255,255,255,.72); font-size: 12px; }
+.品牌帶 p { color: var(--白); font-weight: 700; white-space: nowrap; }
+.品牌帶 div { width: 100%; display: flex; justify-content: space-around; gap: 20px; font-weight: 700; letter-spacing: .12em; }
+.區塊 { padding: 100px max(7vw, 28px); }
+.區塊標題 { text-align: center; max-width: 720px; margin: 0 auto 55px; }
+h2 { margin: 0 0 17px; color: var(--深藍); font-size: clamp(34px, 4vw, 48px); line-height: 1.25; letter-spacing: -.035em; }
+.區塊標題 > p:last-child, .檢測文案 > p { color: var(--次要字); }
+.困境區 { background: var(--白); }
+.困境卡片組, .方案卡片組 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; max-width: 1180px; margin: auto; }
+.困境卡片 { position: relative; padding: 35px; border: 1px solid var(--線); border-radius: 10px; background: var(--白); transition: transform .25s, box-shadow .25s; }
+.困境卡片:hover { transform: translateY(-7px); box-shadow: var(--陰影); }
+.困境卡片.主卡 { color: rgba(255,255,255,.75); background: var(--藍); border-color: var(--藍); box-shadow: 0 22px 45px rgba(55,88,215,.22); }
+.困境卡片 .編號 { color: #aeb7c8; font-size: 11px; font-weight: 900; letter-spacing: .15em; }
+.線條圖示 { margin: 30px 0 22px; font-size: 38px; color: var(--藍); }
+.主卡 .線條圖示, .主卡 h3 { color: var(--白); }
+.困境卡片 h3 { margin: 0 0 10px; color: var(--深藍); font-size: 22px; }
+.困境卡片 p { margin: 0; font-size: 14px; color: var(--次要字); }
+.主卡 p { color: rgba(255,255,255,.76); }
+
+.路線區 { display: grid; grid-template-columns: .8fr 1.2fr; gap: 7vw; color: var(--白); background: var(--深藍); }
+.路線介紹 { align-self: center; max-width: 440px; }
+.路線介紹 h2 { color: var(--白); }
+.路線介紹 > p:not(.眉標) { color: rgba(255,255,255,.64); }
+.眉標.淺色 { color: #aebcff; }
+.淺色連結 { display: inline-block; margin-top: 20px; color: var(--白); font-weight: 700; border-bottom: 1px solid rgba(255,255,255,.4); }
+.時間軸 { position: relative; }
+.時間軸::before { content: ""; position: absolute; top: 30px; bottom: 30px; left: 106px; width: 1px; background: rgba(255,255,255,.18); }
+.步驟 { display: grid; grid-template-columns: 80px 52px 1fr; gap: 0 20px; padding: 21px 0; outline: 0; }
+.週數 { padding-top: 8px; color: rgba(255,255,255,.42); font-size: 11px; text-align: right; }
+.節點 { width: 44px; height: 44px; z-index: 2; display: grid; place-items: center; color: #aebcff; background: var(--深藍); border: 1px solid rgba(174,188,255,.45); border-radius: 50%; font-size: 12px; font-weight: 800; transition: .2s; }
+.步驟:hover .節點, .步驟.啟用 .節點, .步驟:focus .節點 { color: var(--白); background: var(--藍); border-color: var(--亮藍); box-shadow: 0 0 0 7px rgba(108,140,255,.12); }
+.步驟 h3 { margin: 4px 0 4px; font-size: 19px; }
+.步驟 p { margin: 0 0 8px; color: rgba(255,255,255,.58); font-size: 13px; }
+.成果 { color: #aebcff; font-size: 11px; font-weight: 700; }
+
+.講師區 { display: grid; grid-template-columns: .9fr 1.1fr; gap: 7vw; align-items: center; overflow: hidden; background: var(--白); }
+.講師照片框 { position: relative; min-height: 610px; overflow: hidden; border-radius: 12px; background: var(--深藍); box-shadow: var(--陰影); }
+.講師照片框::before { content: ""; position: absolute; inset: 22px; z-index: 2; pointer-events: none; border: 1px solid rgba(255,255,255,.28); border-radius: 7px; }
+.講師照片框 img { width: 100%; height: 610px; display: block; object-fit: cover; object-position: 57% center; }
+.照片標籤 { position: absolute; right: 0; bottom: 0; z-index: 3; width: 190px; padding: 21px 24px; color: var(--白); background: var(--藍); }
+.照片標籤 strong, .照片標籤 span { display: block; }
+.照片標籤 strong { font-size: 35px; line-height: 1.1; }
+.照片標籤 span { margin-top: 5px; color: rgba(255,255,255,.75); font-size: 11px; }
+.講師內容 { max-width: 650px; }
+.講師引言 { margin: 0 0 28px; color: var(--次要字); font-size: 16px; }
+.講師身分 { display: flex; align-items: center; gap: 16px; padding: 20px 0; border-top: 1px solid var(--線); border-bottom: 1px solid var(--線); }
+.講師身分 > span { flex-shrink: 0; padding: 5px 10px; color: var(--白); background: var(--橘); border-radius: 4px; font-size: 11px; font-weight: 800; }
+.講師身分 strong { color: var(--深藍); font-size: 17px; }
+.講師身分 p { margin: 1px 0 0; color: var(--次要字); font-size: 12px; }
+.講師經歷 { margin: 25px 0; padding: 0; list-style: none; }
+.講師經歷 li { display: grid; grid-template-columns: 32px 1fr; gap: 11px; margin: 13px 0; align-items: start; }
+.講師經歷 li > span { width: 27px; height: 27px; display: grid; place-items: center; color: var(--藍); background: var(--淡藍); border-radius: 50%; font-size: 9px; font-weight: 900; }
+.講師經歷 p { margin: 0; color: var(--次要字); font-size: 14px; }
+.講師經歷 strong { color: var(--藍); }
+.擅長領域 { display: flex; align-items: center; gap: 18px; }
+.擅長領域 > p { flex-shrink: 0; margin: 0; color: var(--深藍); font-size: 12px; font-weight: 800; }
+.擅長領域 div { display: flex; flex-wrap: wrap; gap: 7px; }
+.擅長領域 span { padding: 6px 11px; color: var(--藍); background: var(--淡藍); border-radius: 20px; font-size: 11px; font-weight: 700; }
+.講師使命 { margin: 25px 0 0; padding: 17px 20px; color: var(--深藍); background: var(--米白); border-left: 3px solid var(--橘); font-size: 13px; font-weight: 700; }
+
+.檢測區 { display: grid; grid-template-columns: .85fr 1.15fr; gap: 8vw; align-items: center; background: var(--米白); }
+.檢測文案 { max-width: 480px; justify-self: end; }
+.檢測文案 ul { display: flex; flex-wrap: wrap; gap: 10px 22px; padding: 0; margin-top: 28px; list-style: none; color: var(--深藍); font-size: 13px; font-weight: 700; }
+.檢測文案 li::before { content: "✓"; margin-right: 7px; color: var(--藍); }
+.檢測卡 { max-width: 600px; padding: 36px; background: var(--白); border-radius: 12px; box-shadow: var(--陰影); }
+.進度資訊 { display: flex; justify-content: space-between; color: var(--次要字); font-size: 12px; font-weight: 700; }
+.進度資訊 strong { color: var(--藍); }
+.進度條 { height: 4px; margin: 10px 0 29px; background: var(--淡藍); border-radius: 4px; overflow: hidden; }
+.進度條 span { display: block; width: 33.333%; height: 100%; background: var(--藍); transition: width .3s; }
+.題目 { display: none; margin: 0 0 22px; padding: 0; border: 0; }
+.題目.顯示 { display: block; }
+.題目 legend { margin-bottom: 18px; color: var(--深藍); font-size: 20px; font-weight: 800; }
+.題目 label { display: block; margin: 10px 0; cursor: pointer; }
+.題目 input { position: absolute; opacity: 0; }
+.題目 label span { display: block; padding: 13px 15px; border: 1px solid var(--線); border-radius: 7px; color: var(--次要字); font-size: 14px; transition: .2s; }
+.題目 input:checked + span { color: var(--藍); background: var(--淡藍); border-color: var(--亮藍); font-weight: 700; }
+.結果 { display: none; padding: 24px; text-align: center; background: var(--淡藍); border-radius: 9px; }
+.結果.顯示 { display: block; }
+.結果 > span { color: var(--次要字); font-size: 12px; }
+.結果 strong { display: block; color: var(--藍); font-size: 54px; line-height: 1.2; }
+.結果 h3 { margin: 8px 0; color: var(--深藍); }
+.結果 p { margin: 0; color: var(--次要字); font-size: 14px; }
+.表單提醒 { min-height: 23px; margin: -12px 0 7px; color: #c64c35; font-size: 12px; }
+
+.方案區 { background: var(--白); }
+.方案切換 { width: max-content; margin: -30px auto 45px; padding: 4px; background: var(--淡藍); border-radius: 8px; }
+.方案切換 button { padding: 8px 20px; color: var(--次要字); background: transparent; border: 0; border-radius: 6px; font-size: 13px; font-weight: 700; }
+.方案切換 button.啟用 { color: var(--藍); background: var(--白); box-shadow: 0 4px 12px rgba(31,49,92,.1); }
+.方案卡 { position: relative; padding: 36px; border: 1px solid var(--線); border-radius: 12px; }
+.方案卡.推薦 { transform: translateY(-12px); border: 2px solid var(--藍); box-shadow: var(--陰影); }
+.推薦標籤 { position: absolute; top: 0; right: 26px; padding: 7px 14px; color: var(--白); background: var(--藍); border-radius: 0 0 6px 6px; font-size: 11px; font-weight: 800; }
+.方案標籤 { margin: 0; color: var(--藍); font-size: 12px; font-weight: 800; }
+.方案卡 h3 { margin: 6px 0 8px; color: var(--深藍); font-size: 25px; }
+.方案卡 > p:not(.方案標籤) { min-height: 52px; color: var(--次要字); font-size: 13px; }
+.價格 { margin: 24px 0; color: var(--深藍); }
+.價格 span { font-size: 12px; }
+.價格 strong { margin-left: 5px; font-size: 31px; }
+.方案卡 ul { min-height: 185px; padding: 0; list-style: none; font-size: 14px; }
+.方案卡 li { margin: 10px 0; }
+.方案卡 li::before { content: "✓"; margin-right: 10px; color: var(--藍); font-weight: 900; }
+.框線按鈕 { width: 100%; color: var(--深藍); border: 1px solid var(--線); }
+.框線按鈕:hover { color: var(--藍); border-color: var(--藍); }
+
+.問答區 { display: grid; grid-template-columns: .7fr 1.3fr; gap: 8vw; background: var(--米白); }
+.問答區 > div:first-child { max-width: 380px; }
+.問答區 > div:first-child > p:last-child { color: var(--次要字); }
+.問答列表 details { border-bottom: 1px solid #d8d9d5; }
+.問答列表 summary { display: flex; justify-content: space-between; align-items: center; padding: 22px 0; color: var(--深藍); font-weight: 750; cursor: pointer; list-style: none; }
+.問答列表 summary::-webkit-details-marker { display: none; }
+.問答列表 summary span { font-size: 22px; color: var(--藍); transition: transform .2s; }
+.問答列表 details[open] summary span { transform: rotate(45deg); }
+.問答列表 details p { margin: -5px 40px 24px 0; color: var(--次要字); font-size: 14px; }
+.行動區 { margin: 0; padding: 70px max(8vw, 30px); display: flex; align-items: center; justify-content: space-between; gap: 40px; color: var(--白); background: linear-gradient(120deg, var(--藍), #2743ac); }
+.行動區 p { margin: 0; color: #bdc9ff; font-size: 12px; font-weight: 800; letter-spacing: .15em; }
+.行動區 h2 { margin: 5px 0; color: var(--白); }
+.行動區 span { color: rgba(255,255,255,.72); }
+.白色按鈕 { flex-shrink: 0; color: var(--藍); background: var(--白); }
+.白色按鈕 span { color: var(--藍); }
+footer { padding: 32px max(7vw, 28px); display: flex; align-items: center; gap: 30px; color: var(--次要字); font-size: 12px; }
+footer p { margin-right: auto; }
+
+@media (max-width: 900px) {
+  .桌面選單 { display: none; }
+  .首頁 { grid-template-columns: 1fr; padding-top: 55px; background: linear-gradient(160deg, #f9f8f3 0 60%, #eef1ff 60%); }
+  .首頁內容 { margin: auto; }
+  .首頁視覺 { min-height: 450px; }
+  .晶圓 { width: 290px; height: 290px; padding: 55px; }
+  .晶圓中心 { inset: 109px; }
+  .軌道一 { width: 400px; height: 400px; }
+  .軌道二 { width: 430px; }
+  .品牌帶 { display: block; text-align: center; }
+  .品牌帶 div { flex-wrap: wrap; }
+  .路線區, .講師區, .檢測區, .問答區 { grid-template-columns: 1fr; }
+  .路線介紹, .檢測文案 { max-width: 650px; justify-self: start; }
+  .講師照片框 { width: 100%; min-height: 520px; }
+  .講師照片框 img { height: 520px; object-position: 56% center; }
+  .講師內容 { max-width: none; }
+  .檢測卡 { max-width: none; }
+  .困境卡片組, .方案卡片組 { grid-template-columns: 1fr; max-width: 620px; }
+  .方案卡.推薦 { transform: none; }
+}
+
+@media (max-width: 560px) {
+  .導覽列 { height: 68px; }
+  .導覽列 .按鈕小 { display: none; }
+  .區塊 { padding: 72px 22px; }
+  h1 { font-size: 44px; }
+  h2 { font-size: 34px; }
+  .首頁 { padding: 46px 22px 58px; }
+  .首頁操作 { align-items: stretch; flex-direction: column; gap: 18px; }
+  .文字連結 { text-align: center; }
+  .信任列 { justify-content: space-between; }
+  .信任列 div { padding: 0 12px; }
+  .首頁視覺 { min-height: 390px; transform: scale(.88); margin: -15px -30px; }
+  .晶圓 { width: 250px; height: 250px; padding: 48px; }
+  .晶圓中心 { inset: 94px; }
+  .卡一 { left: 0; }.卡二 { right: 0; }.卡三 { left: 2%; }
+  .品牌帶 div { gap: 12px 24px; }
+  .路線區 { padding-left: 18px; padding-right: 18px; }
+  .講師照片框 { min-height: 430px; }
+  .講師照片框 img { height: 430px; object-position: 59% center; }
+  .照片標籤 { width: 165px; padding: 17px 19px; }
+  .照片標籤 strong { font-size: 29px; }
+  .擅長領域 { align-items: flex-start; flex-direction: column; gap: 8px; }
+  .時間軸::before { left: 26px; }
+  .步驟 { grid-template-columns: 52px 1fr; gap: 0 10px; }
+  .週數 { display: none; }
+  .步驟 > div:last-child { grid-column: 2; }
+  .檢測卡, .困境卡片, .方案卡 { padding: 27px 22px; }
+  .行動區 { flex-direction: column; align-items: stretch; padding: 55px 24px; }
+  .行動區 .白色按鈕 { width: 100%; }
+  footer { align-items: flex-start; flex-direction: column; gap: 8px; }
+  footer p { margin: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
