@@ -3,15 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="晶途陪跑，陪你從零盤點、精準補強到拿下半導體產品經理職缺。">
-  <title>晶途陪跑｜轉職半導體產品經理</title>
+  <meta name="description" content="半導體職涯領航所，陪你從零盤點、精準補強到拿下半導體產品經理職缺。">
+  <title>半導體職涯領航所｜轉職半導體產品經理</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="導覽列">
     <a class="品牌" href="#首頁" aria-label="回到首頁">
-      <span class="品牌圖示">晶</span>
-      <span>晶途陪跑</span>
+      <span>半導體職涯領航所</span>
     </a>
     <nav class="桌面選單" aria-label="主要選單">
       <a href="#困境">轉職困境</a>
@@ -19,8 +18,9 @@
       <a href="#講師">講師背景</a>
       <a href="#方案">陪跑方案</a>
       <a href="#問答">常見問答</a>
+      <a href="#會員專區">會員專區</a>
     </nav>
-    <a class="按鈕 按鈕小" href="#檢測">免費能力健檢</a>
+    <button class="按鈕 按鈕小" type="button" id="會員按鈕">登入</button>
   </header>
 
   <main>
@@ -41,6 +41,7 @@
       </div>
 
       <div class="首頁視覺" aria-label="半導體產品經理轉職路線示意">
+        <img class="首頁照片" src="暖光工作桌.jpeg" alt="陽光下的工作桌、筆記本與電腦">
         <div class="光暈"></div>
         <div class="晶圓">
           <span class="晶圓中心">PM</span>
@@ -110,7 +111,7 @@
 
     <section class="區塊 講師區" id="講師">
       <div class="講師照片框">
-        <img src="1020Mzk,y11北科實習_2_修2.jpg" alt="晶途陪跑講師專業形象照">
+        <img src="mentor website.jpg" alt="半導體職涯領航所講師專業形象照">
         <div class="照片標籤">
           <strong>100+</strong>
           <span>工作坊累積參與人次</span>
@@ -141,10 +142,14 @@
       <div class="檢測文案">
         <p class="眉標"><span></span> 三分鐘快速健檢</p>
         <h2>你的半導體產品經理<br>轉職準備度是多少？</h2>
-        <p>選出最符合你的狀態，立即取得目前的準備度與下一步建議。</p>
-        <ul><li>不用留下個人資料</li><li>結果立即顯示</li><li>附一項行動建議</li></ul>
+        <p>留下常用聯絡信箱，完成三題健檢，立即取得目前的準備度與下一步建議。</p>
+        <ul><li>留下聯絡信箱</li><li>結果立即顯示</li><li>附一項行動建議</li></ul>
       </div>
       <form class="檢測卡" id="檢測表單">
+        <label class="信箱欄位" for="聯絡信箱">
+          <span>聯絡信箱</span>
+          <input type="email" id="聯絡信箱" name="聯絡信箱" placeholder="請輸入常用電子郵件" autocomplete="email" required>
+        </label>
         <div class="進度資訊"><span>準備度健檢</span><strong id="進度文字">1 / 3</strong></div>
         <div class="進度條"><span id="進度"></span></div>
         <fieldset class="題目 顯示" data-step="1">
@@ -175,31 +180,36 @@
 
     <section class="區塊 方案區" id="方案">
       <div class="區塊標題">
-        <p class="眉標"><span></span> 選擇適合你的前進方式</p>
-        <h2>不必一個人，把轉職走完</h2>
+        <p class="眉標"><span></span> 半導體外商求職陪跑計畫</p>
+        <h2>一套完整計畫，陪你走到錄取</h2>
+        <p>從履歷定位、產業地圖到面試節奏，重要的轉職環節一次準備完整。</p>
       </div>
-      <div class="方案切換" role="group" aria-label="方案付款方式">
-        <button class="啟用" type="button" data-price="一次">一次付清</button>
-        <button type="button" data-price="分期">輕鬆分期</button>
-      </div>
-      <div class="方案卡片組">
-        <article class="方案卡">
-          <p class="方案標籤">自主準備</p><h3>方向導航包</h3><p>適合願意自己執行，只需要正確地圖與工具的人。</p>
-          <div class="價格"><span>NT$</span><strong data-once="2,980" data-plan="990 × 3 期">2,980</strong></div>
-          <ul><li>半導體職缺地圖</li><li>能力盤點工作表</li><li>履歷範本與檢核表</li><li>一次文字回饋</li></ul>
-          <a class="框線按鈕" href="#聯絡">選擇導航包</a>
-        </article>
+      <div class="方案卡片組 單一方案">
         <article class="方案卡 推薦">
-          <span class="推薦標籤">最多人選擇</span><p class="方案標籤">完整陪跑</p><h3>十二週轉職計畫</h3><p>適合想要有人盯進度、給回饋，系統化拿到錄取的人。</p>
-          <div class="價格"><span>NT$</span><strong data-once="26,800" data-plan="4,600 × 6 期">26,800</strong></div>
-          <ul><li>履歷定位與科技業語言重寫</li><li>個人化產業地圖與公司篩選</li><li>業務經理／產品經理面試策略</li><li>中英文完整模擬面試</li><li>十二週心態與進度追蹤</li></ul>
-          <a class="按鈕 滿版" href="#聯絡">預約免費諮詢 →</a>
-        </article>
-        <article class="方案卡">
-          <p class="方案標籤">面試衝刺</p><h3>錄取加速包</h3><p>適合已有面試邀約，需要在短時間內提升表現的人。</p>
-          <div class="價格"><span>NT$</span><strong data-once="6,800" data-plan="2,300 × 3 期">6,800</strong></div>
-          <ul><li>職缺與公司解析</li><li>一次完整模擬面試</li><li>逐題回饋與修正</li><li>談薪策略建議</li></ul>
-          <a class="框線按鈕" href="#聯絡">選擇加速包</a>
+          <span class="推薦標籤">線上早鳥優惠</span>
+          <p class="方案標籤">完整一對一陪跑</p>
+          <h3>半導體外商求職陪跑計畫</h3>
+          <p>適合想要有人協助定位、盯進度、給回饋，系統化前進外商半導體職涯的人。</p>
+          <div class="原價">原價：美元 1,499</div>
+          <div class="價格"><span>優惠價｜美元</span><strong>1,197</strong></div>
+          <div class="方案內容格">
+            <ul>
+              <li>履歷定位與科技業語言重寫</li>
+              <li>個人化產業地圖與公司篩選</li>
+              <li>業務經理／產品經理面試思維</li>
+              <li>心態調整與求職節奏安排</li>
+              <li>一對一職涯諮詢</li>
+              <li>中英文模擬面試</li>
+            </ul>
+            <div class="加碼服務">
+              <span>加碼服務</span>
+              <p>外商職缺機會</p>
+              <p>錄取薪資區間建議</p>
+              <p>入職協助</p>
+            </div>
+          </div>
+          <a class="按鈕 滿版" href="#聯絡">先預約免費諮詢 →</a>
+          <small class="名額提醒">客製化服務名額有限，請先諮詢目前是否尚有名額。</small>
         </article>
       </div>
     </section>
@@ -218,13 +228,44 @@
       <div><p>下一站：半導體產品經理</p><h2>讓你的轉職，不再只是想想</h2><span>用三十分鐘，釐清方向、現況與最值得先做的一步。</span></div>
       <a class="白色按鈕" href="#檢測">先做免費健檢 <span>→</span></a>
     </section>
+
+    <section class="區塊 會員專區" id="會員專區" hidden>
+      <div class="會員歡迎">
+        <p class="眉標"><span></span> 會員限定內容</p>
+        <h2>歡迎回來，<span id="會員信箱"></span></h2>
+        <p>這裡是受到登入狀態保護的會員頁面。你可以在此查看專屬的轉職行動清單。</p>
+        <button class="框線按鈕" type="button" id="登出按鈕">登出</button>
+      </div>
+      <div class="會員任務">
+        <article><span>01</span><h3>完成能力盤點</h3><p>整理三項可轉移能力，並為每項能力準備一個具體成果。</p></article>
+        <article><span>02</span><h3>鎖定目標職缺</h3><p>挑選三個理想職缺，比較共同條件與目前需要補強的差距。</p></article>
+        <article><span>03</span><h3>準備面試故事</h3><p>用情境、任務、行動、成果四步驟，整理一段跨部門合作經驗。</p></article>
+      </div>
+    </section>
   </main>
 
+  <div class="登入遮罩" id="登入遮罩" hidden>
+    <section class="登入卡" role="dialog" aria-modal="true" aria-labelledby="登入標題">
+      <button class="關閉登入" type="button" id="關閉登入" aria-label="關閉登入視窗">×</button>
+      <p class="眉標"><span></span> 會員專區</p>
+      <h2 id="登入標題">登入你的帳號</h2>
+      <p class="登入說明">登入後即可查看會員限定的轉職行動清單。</p>
+      <form id="登入表單">
+        <label>電子郵件<input type="email" id="登入信箱" autocomplete="email" required></label>
+        <label>密碼<input type="password" id="登入密碼" autocomplete="current-password" minlength="6" required></label>
+        <p class="登入提醒" id="登入提醒" role="status"></p>
+        <button class="按鈕 滿版" type="submit" id="登入送出">登入</button>
+      </form>
+      <button class="切換模式" type="button" id="切換模式">還沒有帳號？立即註冊</button>
+    </section>
+  </div>
+
   <footer>
-    <div class="品牌"><span class="品牌圖示">晶</span><span>晶途陪跑</span></div>
+    <div class="品牌"><span>半導體職涯領航所</span></div>
     <p>陪你把職涯選擇，走成一條清楚的路。</p>
-    <span>© 2026 晶途陪跑</span>
+    <span>© 2026 半導體職涯領航所</span>
   </footer>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.57.4/dist/umd/supabase.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
